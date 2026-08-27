@@ -7,13 +7,13 @@
   background-color: #000000;
   color: #ffffff;
   height: 80px;
-  margin : 0 auto ;
+  margin: 0 auto;
 }
 
 .shop-now {
   width: 156px;
   height: 48px;
-  background-color: #EBC80C;
+  background-color: #ebc80c;
   border-radius: 2px;
 }
 
@@ -22,6 +22,24 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0px 10px 0px;
-  background-color: #1B6392;
+  background-color: #1b6392;
   color: #ffffff;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px 10px 0px;
+  background-color: #1b6392;
+  color: #ffffff;
+}
+
+.bottom-nav-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px 10px 0px;
+  background-color: #fff;
+  
 }

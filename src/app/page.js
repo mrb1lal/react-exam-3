@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Navbar from "@/components/navbar/Navbar";
 import Banner from "@/components/banner/Banner";
 import BestDealists from "@/components/bestDeals/BestDealist";
 import ShopWithCategory from "@/components/shopwithCategorys/ShopwithCategorys";
@@ -8,10 +9,11 @@ import ComputerAccessories from "@/components/computerAccessories/ComputerAccess
 import Card from "@/components/card/Card";
 import LatestNews from "@/components/latestNews/LatestNews";
 import Subscribe from "@/components/subscribe/Subscribe";
-import Footer from "@/components/footer/Footer";
+
 export default function Home() {
   return (
     <div>
+      <Navbar />
       <Banner />
       <BestDealists />
       <ShopWithCategory />
@@ -20,7 +22,6 @@ export default function Home() {
       <Card />
       <LatestNews />
       <Subscribe />
-      <Footer />
     </div>
   );
 }
