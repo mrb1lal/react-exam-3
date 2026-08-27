@@ -11,16 +11,16 @@ import Subscribe from "@/components/subscribe/Subscribe";
 import Footer from "@/components/footer/Footer";
 export default function Home() {
   return (
-<div>
-     <Banner />
-     <BestDealists />
-     <ShopWithCategory />
-     <FeaturedProducts />
-     <ComputerAccessories />
-     <Card />
-     <LatestNews />
-     <Subscribe />
-     <Footer />
+    <div>
+      <Banner />
+      <BestDealists />
+      <ShopWithCategory />
+      <FeaturedProducts />
+      <ComputerAccessories />
+      <Card />
+      <LatestNews />
+      <Subscribe />
+      <Footer />
     </div>
   );
 }
