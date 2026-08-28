@@ -1,91 +1,102 @@
-import styles from "./Navbar.css";
-import Image from "next/image";
-import { CiTwitter } from "react-icons/ci";
-import { FaFacebook } from "react-icons/fa";
-import { FaPinterestP } from "react-icons/fa";
-import { FaReddit } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { IoIosClose } from "react-icons/io";
-import { CgArrowRight } from "react-icons/cg";
-import { CiSearch } from "react-icons/ci";
-import { FaBasketShopping } from "react-icons/fa6";
-import { FaHeart } from "react-icons/fa";
-import { CiUser } from "react-icons/ci";
-import { FaLocationDot } from "react-icons/fa6";
-import { TbReplace } from "react-icons/tb";
-import { CiHeadphones } from "react-icons/ci";
-import { RxInfoCircled } from "react-icons/rx";
-import { PiPhoneCallFill } from "react-icons/pi";
+import React from "react";
+import "./Navbar.css";
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaPinterestP,
+  FaRedditAlien,
+  FaYoutube,
+  FaInstagram,
+  FaRegHeart,
+  FaRegUser,
+} from "react-icons/fa";
+import { FiSearch, FiShoppingCart } from "react-icons/fi";
+import {
+  IoLocationOutline,
+  IoSyncOutline,
+  IoHeadsetOutline,
+  IoInformationCircleOutline,
+  IoCallOutline,
+} from "react-icons/io5";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <div>
-      <div className="top-nav">
-        <Image
-          src="/Black.png"
-          alt=" Logo"
-          width={74.00000261552674}
-          height={40}
-        />
-        <p>
-          Us to <span style={{ color: "yellow" }}> 50%</span> off
-        </p>
-        <div>
-          <button className="shop-now">
-            Shop Now <CgArrowRight />
+    <header className="header-container">
+      <div className="top-bar">
+        <div className="top-bar-left">
+          <span>Welcome to Clicon online eCommerce store.</span>
+        </div>
+        <div className="top-bar-right">
+          <div className="social-icons">
+            <span>Follow us:</span>
+            <FaTwitter />
+            <FaFacebookF />
+            <FaPinterestP />
+            <FaRedditAlien />
+            <FaYoutube />
+            <FaInstagram />
+          </div>
+          <div className="top-dropdowns">
+            <span>
+              Eng <MdKeyboardArrowDown />
+            </span>
+            <span>
+              USD <MdKeyboardArrowDown />
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className="middle-bar">
+        <div className="logo-container">
+          <div className="logo-icon"></div>
+          <h1>UNITED DEALS</h1>
+        </div>
+        <div className="search-container">
+          <input type="text" placeholder="Search for anything..." />
+          <button>
+            <FiSearch />
           </button>
-          <IoIosClose
-            style={{ width: "32px", height: "32px" }}
-            className="custom-close-icon"
-          />
+        </div>
+        <div className="action-icons">
+          <div className="cart-icon-wrapper">
+            <FiShoppingCart />
+            <span className="cart-badge">2</span>
+          </div>
+          <FaRegHeart />
+          <FaRegUser />
         </div>
       </div>
-      <nav>
-        <p>Welcome to Clicon online eCommerce store. </p>
-        <p>
-          Wollow us : <CiTwitter /> <FaFacebook /> <FaPinterestP /> <FaReddit />{" "}
-          <FaYoutube />{" "}
-        </p>
-        <div>
-          <select>
-            <option>English</option>
-            <option>Arabic</option>
-          </select>
-          <select>
-            <option>usd</option>
-            <option>egp</option>
-          </select>
+
+      <div className="bottom-bar">
+        <div className="bottom-left">
+          <button className="category-btn">
+            All Category <MdKeyboardArrowDown />
+          </button>
+          <nav className="nav-links">
+            <a href="#">
+              <IoLocationOutline /> Track Order
+            </a>
+            <a href="#">
+              <IoSyncOutline /> Compare
+            </a>
+            <a href="#">
+              <IoHeadsetOutline /> Customer Support
+            </a>
+            <a href="#">
+              <IoInformationCircleOutline /> Need Help
+            </a>
+          </nav>
         </div>
-      </nav>
-      <div className="bottom-nav">
-        <Image src="/logo.png" alt=" Logo" width={286} height={48} />
-        <div>
-          <input type="text" placeholder="Search " />
-          <CiSearch />
-        </div>
-        <div>
-          <FaBasketShopping />
-          <FaHeart />
-          <CiUser />
+        <div className="bottom-right">
+          <a href="tel:+12025550104">
+            <IoCallOutline /> +1-202-555-0104
+          </a>
         </div>
       </div>
-      <div className="bottom-nav-2">
-        <select>
-          <option>all categories</option>
-        </select>
-        <FaLocationDot /> 
-        <span>Track Order</span>
-        <TbReplace />
-        <span>Compare</span>
-        <CiHeadphones />
-        <span>Customer Support</span>
-        <RxInfoCircled />
-        <span>Need Help</span>
-        <PiPhoneCallFill />
-        <span>+998 90 699 06 39</span>
-      </div>
-    </div>
+    </header>
   );
-}
+};
 
 export default Navbar;
