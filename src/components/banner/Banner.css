@@ -1,0 +1,255 @@
+.banner-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  font-family: sans-serif;
+}
+
+.banner-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.main-banner {
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.main-content {
+  max-width: 45%;
+}
+
+.subtitle {
+  color: #2db2ff;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.subtitle .line {
+  width: 30px;
+  height: 2px;
+  background-color: #2db2ff;
+}
+
+.main-content h2 {
+  font-size: 48px;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+.main-content p {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.shop-btn-orange {
+  background-color: #fa8232;
+  color: #ffffff;
+  border: none;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.main-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.xbox-img {
+  max-width: 100%;
+  height: 350px;
+  object-fit: contain;
+}
+
+.price-badge-circle {
+  position: absolute;
+  top: 10%;
+  right: -20px;
+  background-color: #2db2ff;
+  color: #ffffff;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  border: 4px solid #ffffff;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 24px;
+  left: 60px;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #111827;
+}
+
+.side-banners {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.top-side-banner {
+  background-color: #191c1f;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.top-side-content {
+  flex: 1;
+}
+
+.summer-sale {
+  color: #facc15;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.top-side-content h3 {
+  font-size: 28px;
+  margin: 0 0 24px 0;
+  line-height: 1.2;
+}
+
+.top-side-image {
+  position: relative;
+  width: 45%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pixel-img {
+  height: 180px;
+  object-fit: contain;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #facc15;
+  color: #111827;
+  padding: 6px 12px;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 2px;
+}
+
+.bottom-side-banner {
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+}
+
+.bottom-side-image {
+  width: 45%;
+}
+
+.earbuds-img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.bottom-side-content {
+  flex: 1;
+}
+
+.bottom-side-content h3 {
+  color: #111827;
+  font-size: 24px;
+  margin: 0 0 12px 0;
+}
+
+.price-blue {
+  color: #2db2ff;
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.features-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.feature-item:not(:last-child) {
+  border-right: 1px solid #e5e7eb;
+  margin-right: 24px;
+}
+
+.feature-icon {
+  font-size: 36px;
+  color: #111827;
+}
+
+.feature-text h4 {
+  font-size: 14px;
+  color: #111827;
+  margin: 0 0 4px 0;
+  font-weight: 700;
+}
+
+.feature-text p {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
