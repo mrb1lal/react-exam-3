@@ -1,0 +1,127 @@
+.cat-head-section {
+  width: 100%;
+  padding: 30px 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cat-head-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cat-head-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  color: #111827;
+}
+
+.cat-head-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.view-mode-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+.view-icon {
+  font-size: 20px;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.view-icon.active {
+  color: #fa8232;
+}
+
+.cat-items-count {
+  font-size: 14px;
+  color: #4b5563;
+  margin-left: 12px;
+}
+
+.cat-head-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-label {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.filter-dropdown-box {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #111827;
+  cursor: pointer;
+}
+
+.position-group {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 10px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  cursor: pointer;
+}
+
+.filter-input-text {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+@media (max-width: 768px) {
+  .cat-head-container {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .cat-head-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 import "./Flashsales.css";
 
@@ -17,7 +18,7 @@ export default function FlashSales() {
         </div>
         <div className="fs-banner-visual">
           <div className="fs-price-circle">₹1999</div>
-          <img src="/macbook.png" alt="Macbook Pro" className="fs-main-img" />
+          <Image src="/laptop.png" alt="Macbook Pro" width={300} height={300} className="fs-main-img" />
         </div>
       </div>
 
@@ -28,7 +29,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/webcam.png" alt="Bose Sport Earbuds" />
+              <Image src="/headphones.png" alt="Bose Sport Earbuds" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>Bose Sport Earbuds - Wireless Earphones - Bluetooth In Ear...</h4>
@@ -38,7 +39,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/phone1.png" alt="Smartphone" />
+              <Image src="/phone1.png" alt="Smartphone" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>Simple Mobile 4G LTE Prepaid Smartphone</h4>
@@ -48,7 +49,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/keyboard.png" alt="Keyboard" />
+              <Image src="/controller.png" alt="Keyboard" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>4K UHD LED Smart TV with Chromecast Built-in</h4>
@@ -62,7 +63,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/ps5.png" alt="PS5" />
+              <Image src="/ps5.png" alt="PS5" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>Samsung Electronics Samsung Galaxy S21 5G</h4>
@@ -72,7 +73,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/camera1.png" alt="Camera" />
+              <Image src="/camera.png" alt="Camera" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>Simple Mobile 5G LTE Galaxy 12 Mini 512GB Gaming Phone</h4>
@@ -82,7 +83,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/phone2.png" alt="Phone" />
+              <Image src="/phone2.png" alt="Phone" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>Sony DSCHX8 High Zoom Point & Shoot Camera</h4>
@@ -96,7 +97,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/tv.png" alt="TV" />
+              <Image src="/tv.png" alt="TV" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>Portable Wshing Machine, 11lbs capacity Model 18NMF...</h4>
@@ -106,7 +107,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/drone.png" alt="Drone" />
+              <Image src="/drone1.png" alt="Drone" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>Sony DSCHX8 High Zoom Point & Shoot Camera</h4>
@@ -116,7 +117,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/speaker.png" alt="Speaker" />
+              <Image src="/headphones.png" alt="Speaker" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>Dell Optiplex 7000x7480 All-in-One Computer Monitor</h4>
@@ -130,7 +131,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/earbuds.png" alt="Earbuds" />
+              <Image src="/headphones.png" alt="Earbuds" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>TOZO T6 True Wireless Earbuds Bluetooth Headpho...</h4>
@@ -140,7 +141,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/printer.png" alt="Printer" />
+              <Image src="/camera.png" alt="Printer" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>JBL FLIP 4 -Waterproof Portable Bluetooth Speaker...</h4>
@@ -150,7 +151,7 @@ export default function FlashSales() {
           
           <div className="fs-card">
             <div className="fs-card-img">
-              <img src="/gamepad.png" alt="Gamepad" />
+              <Image src="/controller.png" alt="Gamepad" width={200} height={200} />
             </div>
             <div className="fs-card-info">
               <h4>Wyze Cam Pan v2 1080p Pan/Tilt/Zoom Wi-Fi Indoor Smar...</h4>

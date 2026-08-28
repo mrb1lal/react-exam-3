@@ -1,3 +1,4 @@
+import Image from "next/image";
 import './Banner.css';
 import { FaArrowRight } from 'react-icons/fa';
 import { FiPackage, FiAward, FiCreditCard, FiHeadphones } from 'react-icons/fi';
@@ -18,7 +19,7 @@ export default function Banner() {
             </button>
           </div>
           <div className="main-image-wrapper">
-            <img src="/xbox.png" alt="Xbox" className="xbox-img" />
+            <Image src="/xbox.png" alt="Xbox" width={300} height={300} className="xbox-img" />
             <div className="price-badge-circle">
               ₹299
             </div>
@@ -41,13 +42,13 @@ export default function Banner() {
             </div>
             <div className="top-side-image">
               <span className="discount-badge">29% OFF</span>
-              <img src="/pixel.png" alt="Pixel 6 Pro" className="pixel-img" />
+              <Image src="/pixel.png" alt="Pixel 6 Pro" width={200} height={200} className="pixel-img" />
             </div>
           </div>
 
           <div className="bottom-side-banner">
             <div className="bottom-side-image">
-              <img src="/Xiaomi.png" alt="Earbuds" className="earbuds-img" />
+              <Image src="/Xiaomi.png" alt="Earbuds" width={200} height={200} className="earbuds-img" />
             </div>
             <div className="bottom-side-content">
               <h3>Xiaomi FlipBuds Pro</h3>

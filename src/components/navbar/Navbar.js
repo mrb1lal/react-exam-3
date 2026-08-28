@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="top-banner">
         <div className="banner-content">
           <div className="banner-left">
-            <image src="/xBox.png" alt="Xbox Console" className="xbox" />
+            <Image src="/xbox.png" alt="Xbox Console" width={60} height={60} className="xbox" />
             <span className="friday-text">Friday</span>
           </div>
           <div className="banner-center">
@@ -104,11 +104,11 @@ export default function Navbar() {
       <div className="bottom-bar">
         <div className="bottom-bar-container">
           <div className="bottom-left">
-            <button className="category-btn">
+            <Link href="/categories" className="category-btn">
               All Category <MdKeyboardArrowDown />
-            </button>
+            </Link>
             <nav className="nav-menu">
-              <Link href="/track">
+              <Link href="/ShopGrid">
                 <IoLocationOutline /> Track Order
               </Link>
               <Link href="/compare">
