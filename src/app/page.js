@@ -18,8 +18,8 @@ export default function Home() {
       <BestDealists />
       <ShopWithCategory />
       <FeaturedProducts />
-      <ComputerAccessories />
       <Card />
+      <ComputerAccessories />
       <LatestNews />
       <Subscribe />
     </div>
