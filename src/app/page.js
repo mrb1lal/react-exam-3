@@ -9,7 +9,7 @@ import ComputerAccessories from "@/components/computerAccessories/ComputerAccess
 import Card from "@/components/card/Card";
 import LatestNews from "@/components/latestNews/LatestNews";
 import Subscribe from "@/components/subscribe/Subscribe";
-
+import Flashsales from "@/components/flashsales/Flashsales"
 export default function Home() {
   return (
     <div>
@@ -20,6 +20,7 @@ export default function Home() {
       <FeaturedProducts />
       <Card />
       <ComputerAccessories />
+      <Flashsales />
       <LatestNews />
       <Subscribe />
     </div>
