@@ -1,6 +1,8 @@
+import Image from 'next/image';
 import { FiArrowRight } from "react-icons/fi";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
 import "./Footer.css";
+
 
 export default function Footer() {
   return (
@@ -9,7 +11,7 @@ export default function Footer() {
         
         <div className="footer-col brand-col">
           <div className="footer-logo">
-            <span className="logo-icon"></span>
+            <Image src="/ficon.png" alt="Footer Logo" width={48} height={48} className="icon" />
             <h2>CLICON</h2>
           </div>
           <div className="footer-support">

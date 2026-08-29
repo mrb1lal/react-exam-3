@@ -1,5 +1,4 @@
 .best-deals-wrapper {
-  
   padding: 40px 20px;
   font-family: sans-serif;
   width: 100%;
@@ -21,7 +20,7 @@
 }
 
 .deals-header-left h2 {
-  color: #ffffff;
+  color: #111827;
   font-size: 24px;
   font-weight: 600;
   margin: 0;
@@ -60,7 +59,7 @@
 .card-large {
   background-color: #ffffff;
   grid-row: span 2;
-  padding: 32px;
+  padding: 24px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -68,72 +67,31 @@
 
 .card-small {
   background-color: #ffffff;
-  padding: 24px;
+  padding: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-.badge-container {
-  position: absolute;
-  top: 16px;
-  left: 16px;
+.large-img-box,
+.small-img-box {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 2;
-}
-
-.badge-yellow {
-  background-color: #facc15;
-  color: #111827;
-  padding: 4px 8px;
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: 2px;
-}
-
-.badge-red {
-  background-color: #ef4444;
-  color: #ffffff;
-  padding: 4px 8px;
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: 2px;
-}
-
-.badge-grey {
-  background-color: #9ca3af;
-  color: #ffffff;
-  padding: 4px 8px;
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #f3f4f6;
+  border-radius: 8px;
 }
 
 .large-img-box {
-  width: 100%;
   height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 24px;
-  margin-top: 20px;
+  margin-bottom: 16px;
 }
 
 .small-img-box {
-  width: 100%;
   height: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 16px;
-  position: relative;
-}
-
-.small-img-box.grey-bg {
-  background-color: #f3f4f6;
+  margin-bottom: 12px;
 }
 
 .product-img {
@@ -142,35 +100,61 @@
   object-fit: contain;
 }
 
-.rating-box {
+.card-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
   display: flex;
   align-items: center;
-  gap: 4px;
-  margin-bottom: 12px;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #111827;
+  transition: all 0.15s;
 }
 
-.star-icon {
-  color: #facc15;
-  font-size: 14px;
+.action-btn:hover {
+  background-color: #fa8232;
+  color: #ffffff;
+  border-color: #fa8232;
 }
 
-.review-count {
-  color: #6b7280;
-  font-size: 12px;
-  margin-left: 4px;
+.action-btn.wishlist-btn.active {
+  background-color: #e63946;
+  color: #ffffff;
+  border-color: #e63946;
+}
+
+.action-btn.wishlist-btn.active:hover {
+  background-color: #c1121f;
+}
+
+.action-btn.wishlist-btn .filled {
+  fill: currentColor;
 }
 
 .large-title {
   font-size: 16px;
   color: #111827;
-  margin: 0 0 16px 0;
+  margin: 0;
   line-height: 1.4;
 }
 
 .small-title {
   font-size: 13px;
   color: #111827;
-  margin: 0 0 12px 0;
+  margin: 0;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -178,100 +162,126 @@
   overflow: hidden;
 }
 
-.price-box {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+@media (max-width: 1024px) {
+  .best-deals-wrapper {
+    padding: 30px 16px;
+  }
+  
+  .deals-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .deals-header-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .deals-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+  
+  .card-large {
+    grid-row: auto;
+  }
+  
+  .large-img-box {
+    height: 200px;
+  }
 }
 
-.card-large .price-box {
-  margin-bottom: 16px;
+@media (max-width: 768px) {
+  .best-deals-wrapper {
+    padding: 24px 12px;
+  }
+  
+  .deals-header-left h2 {
+    font-size: 20px;
+  }
+  
+  .timer-box {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .browse-link {
+    font-size: 13px;
+  }
+  
+  .deals-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+  }
+  
+  .card-large {
+    padding: 16px;
+  }
+  
+  .card-small {
+    padding: 14px;
+  }
+  
+  .large-img-box {
+    height: 180px;
+    margin-bottom: 12px;
+  }
+  
+  .small-img-box {
+    height: 120px;
+  }
+  
+  .action-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .large-title {
+    font-size: 15px;
+  }
+  
+  .small-title {
+    font-size: 12px;
+  }
 }
 
-.old-price {
-  color: #9ca3af;
-  font-size: 14px;
-  text-decoration: line-through;
+@media (max-width: 600px) {
+  .deals-grid-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-large,
+  .card-small {
+    padding: 14px;
+  }
+  
+  .large-img-box {
+    height: 200px;
+  }
+  
+  .small-img-box {
+    height: 150px;
+  }
 }
 
-.new-price {
-  color: #2db2ff;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.card-small .old-price {
-  font-size: 12px;
-}
-
-.card-small .new-price {
-  font-size: 16px;
-}
-
-.large-desc {
-  font-size: 14px;
-  color: #6b7280;
-  line-height: 1.5;
-  margin-bottom: 32px;
-}
-
-.action-buttons {
-  display: flex;
-  gap: 12px;
-  margin-top: auto;
-}
-
-.icon-btn {
-  width: 48px;
-  height: 48px;
-  background-color: #fdf2e9;
-  border: none;
-  color: #111827;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 2px;
-}
-
-.add-cart-btn {
-  flex: 1;
-  background-color: #fa8232;
-  color: #ffffff;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 2px;
-}
-
-.hover-actions {
-  position: absolute;
-  display: flex;
-  gap: 10px;
-}
-
-.circle-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  color: #111827;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.orange-btn {
-  background-color: #fa8232;
-  color: #ffffff;
+@media (max-width: 400px) {
+  .deals-header-left h2 {
+    font-size: 18px;
+  }
+  
+  .action-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+  
+  .large-title {
+    font-size: 14px;
+  }
+  
+  .small-title {
+    font-size: 12px;
+  }
 }

@@ -1,9 +1,26 @@
+"use client";
+
 import Image from "next/image";
+import { useCart } from "@/context/CartContext";
 import './BestDealist.css';
-import { FaArrowRight, FaStar } from 'react-icons/fa';
-import { FiHeart, FiShoppingCart, FiEye } from 'react-icons/fi';
+import { FaArrowRight } from 'react-icons/fa';
+import { FiHeart, FiShoppingCart } from 'react-icons/fi';
 
 export default function BestDeals() {
+  const { addToCart, addToWishlist, isInWishlist } = useCart();
+
+  const products = [
+    { id: 1, title: "Xbox Series S - 512GB SSD Console", img: "/ps5.png" },
+    { id: 2, title: "Bose Sport Earbuds - Wireless Earphones", img: "/drone1.png" },
+    { id: 3, title: "Simple Mobile 4G LTE Prepaid Smartphone", img: "/phone1.png" },
+    { id: 4, title: "4K UHD LED Smart TV with Chromecast Built-in", img: "/controller.png" },
+    { id: 5, title: "Sony DSCHX8 High Zoom Point & Shoot Camera", img: "/Overly.png" },
+    { id: 6, title: "Dell Optiplex 7000x7480 All-in-One Computer Monitor", img: "/phone2.png" },
+    { id: 7, title: "Portable Washing Machine, 11lbs capacity", img: "/drone2.png" },
+    { id: 8, title: "2 Barrel Carburetor Carb 2100 Engine", img: "/monitor.png" },
+    { id: 9, title: "JBL FLIP 4 - Waterproof Portable Bluetooth Speaker", img: "/camera.png" },
+  ];
+
   return (
     <div className="best-deals-wrapper">
       <div className="deals-header">
@@ -19,162 +36,30 @@ export default function BestDeals() {
       </div>
 
       <div className="deals-grid-container">
-        <div className="card-large">
-          <div className="badge-container">
-            <span className="badge-yellow">32% OFF</span>
-            <span className="badge-red">HOT</span>
-          </div>
-          <div className="large-img-box">
-            <Image src="/ps5.png" alt="Console" width={400} height={300} className="product-img" />
-          </div>
-          <div className="large-info">
-            <div className="rating-box">
-              <FaStar className="star-icon" />
-              <FaStar className="star-icon" />
-              <FaStar className="star-icon" />
-              <FaStar className="star-icon" />
-              <FaStar className="star-icon" />
-              <span className="review-count">(52,677)</span>
+        {products.map((item, index) => (
+          <div key={item.id} className={index === 0 ? "card-large" : "card-small"}>
+            <div className={index === 0 ? "large-img-box" : "small-img-box"}>
+              <Image src={item.img} alt={item.title} width={index === 0 ? 400 : 200} height={index === 0 ? 300 : 200} className="product-img" />
+              <div className="card-actions">
+                <button
+                  className={`action-btn wishlist-btn ${isInWishlist(item.id) ? "active" : ""}`}
+                  onClick={() => addToWishlist(item)}
+                  aria-label={isInWishlist(item.id) ? "Wishlistdan o'chirish" : "Wishlistga qo'shish"}
+                >
+                  <FiHeart className={isInWishlist(item.id) ? "filled" : ""} />
+                </button>
+                <button
+                  className="action-btn cart-btn"
+                  onClick={() => addToCart(item)}
+                  aria-label="Savatga qo'shish"
+                >
+                  <FiShoppingCart />
+                </button>
+              </div>
             </div>
-            <h3 className="large-title">
-              Xbox Series S - 512GB SSD Console with Wireless Controller - EU Versio...
-            </h3>
-            <div className="price-box">
-              <span className="old-price">₹865.99</span>
-              <span className="new-price">₹442.12</span>
-            </div>
-            <p className="large-desc">
-              Games built using the Xbox Series X|S development kit showcase unparalleled load times, visuals.
-            </p>
-            <div className="action-buttons">
-              <button className="icon-btn">
-                <FiHeart />
-              </button>
-              <button className="add-cart-btn">
-                <FiShoppingCart /> ADD TO CART
-              </button>
-              <button className="icon-btn">
-                <FiEye />
-              </button>
-            </div>
+            <h3 className={index === 0 ? "large-title" : "small-title"}>{item.title}</h3>
           </div>
-        </div>
-
-        <div className="card-small">
-          <div className="badge-container">
-            <span className="badge-grey">SOLD OUT</span>
-          </div>
-          <div className="small-img-box">
-            <Image src="/drone1.png" alt="Drone" width={200} height={200} className="product-img" />
-          </div>
-          <div className="small-info">
-            <h3 className="small-title">Bose Sport Earbuds - Wireless Earphones - Bluetooth In Ear...</h3>
-            <div className="price-box">
-              <span className="new-price">₹2,300</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="card-small">
-          <div className="small-img-box">
-            <Image src="/phone1.png" alt="Smartphone" width={200} height={200} className="product-img" />
-          </div>
-          <div className="small-info">
-            <h3 className="small-title">Simple Mobile 4G LTE Prepaid Smartphone</h3>
-            <div className="price-box">
-              <span className="new-price">₹220</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="card-small">
-          <div className="badge-container">
-            <span className="badge-yellow">19% OFF</span>
-          </div>
-          <div className="small-img-box">
-            <Image src="/controller.png" alt="Controller" width={200} height={200} className="product-img" />
-          </div>
-          <div className="small-info">
-            <h3 className="small-title">4K UHD LED Smart TV with Chromecast Built-in</h3>
-            <div className="price-box">
-              <span className="old-price">₹865</span>
-              <span className="new-price">₹150</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="card-small active-hover">
-          <div className="small-img-box grey-bg">
-            <Image src="/Overly.png" alt="Headphones" width={200} height={200} className="product-img" />
-            <div className="hover-actions">
-              <button className="circle-btn orange-btn"><FiHeart /></button>
-              <button className="circle-btn"><FiShoppingCart /></button>
-              <button className="circle-btn"><FiEye /></button>
-            </div>
-          </div>
-          <div className="small-info">
-            <h3 className="small-title">Sony DSCHX8 High Zoom Point & Shoot Camera</h3>
-            <div className="price-box">
-              <span className="new-price">₹1,200</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="card-small">
-          <div className="small-img-box">
-            <Image src="/phone2.png" alt="Smartphone" width={200} height={200} className="product-img" />
-          </div>
-          <div className="small-info">
-            <h3 className="small-title">Dell Optiplex 7000x7480 All-in-One Computer Monitor</h3>
-            <div className="price-box">
-              <span className="new-price">₹299</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="card-small">
-          <div className="small-img-box">
-            <Image src="/drone2.png" alt="Drone" width={200} height={200} className="product-img" />
-          </div>
-          <div className="small-info">
-            <h3 className="small-title">Portable Wshing Machine, 11lbs capacity Model 18NMFIAM</h3>
-            <div className="price-box">
-              <span className="old-price">₹865.99</span>
-              <span className="new-price">₹70</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="card-small">
-          <div className="badge-container">
-            <span className="badge-red">HOT</span>
-          </div>
-          <div className="small-img-box">
-            <Image src="/monitor.png" alt="Monitor" width={200} height={200} className="product-img" />
-          </div>
-          <div className="small-info">
-            <h3 className="small-title">2 Barrel Carburetor Carb 2100 Engine Increase Horsepower</h3>
-            <div className="price-box">
-              <span className="new-price">₹160</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="card-small">
-          <div className="badge-container">
-            <span className="badge-yellow">32% OFF</span>
-          </div>
-          <div className="small-img-box">
-            <Image src="/camera.png" alt="Camera" width={200} height={200} className="product-img" />
-          </div>
-          <div className="small-info">
-            <h3 className="small-title">JBL FLIP 4 - Waterproof Portable Bluetooth Speaker - Black</h3>
-            <div className="price-box">
-              <span className="old-price">₹360</span>
-              <span className="new-price">₹250</span>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -19,11 +19,9 @@ export default function Cards() {
           </div>
           <div className="card-image">
             <Image
-              src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=500&q=80"
+              src="/applehome.png"
               alt="Apple Homepod Mini"
               fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: "contain" }}
             />
           </div>
         </div>
@@ -44,7 +42,6 @@ export default function Cards() {
               alt="Xiaomi Mi 11 Ultra"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: "contain" }}
             />
           </div>
         </div>

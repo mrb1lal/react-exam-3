@@ -1,4 +1,12 @@
-import { FiSearch, FiUser, FiShoppingCart, FiMenu, FiChevronDown, FiHome, FiList } from "react-icons/fi";
+import {
+  FiSearch,
+  FiUser,
+  FiShoppingCart,
+  FiMenu,
+  FiChevronDown,
+  FiHome,
+  FiList,
+} from "react-icons/fi";
 import "./CategoryNavba.css";
 
 export default function CategoryNavbar() {
@@ -28,7 +36,10 @@ export default function CategoryNavbar() {
 
           <div className="nav-search">
             <FiSearch className="search-icon" />
-            <input type="text" placeholder="Search essentials, groceries and more..." />
+            <input
+              type="text"
+              placeholder="Search essentials, groceries and more..."
+            />
             <FiList className="search-filter-icon" />
           </div>
 
@@ -81,11 +92,17 @@ export default function CategoryNavbar() {
             <FiHome /> Home
           </a>
           <span className="breadcrumb-arrow">/</span>
-          <a href="#" className="breadcrumb-item">Shop</a>
+          <a href="#" className="breadcrumb-item">
+            Shop
+          </a>
           <span className="breadcrumb-arrow">/</span>
-          <a href="#" className="breadcrumb-item">Shop Grid</a>
+          <a href="#" className="breadcrumb-item">
+            Shop Grid
+          </a>
           <span className="breadcrumb-arrow">/</span>
-          <a href="#" className="breadcrumb-item">Electronics Devices</a>
+          <a href="#" className="breadcrumb-item">
+            Electronics Devices
+          </a>
           <span className="breadcrumb-arrow">/</span>
           <span className="breadcrumb-item active">Macbook Pro</span>
         </div>

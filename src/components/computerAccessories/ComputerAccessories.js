@@ -1,8 +1,24 @@
+"use client";
+
 import Image from "next/image";
-import { FiArrowRight } from "react-icons/fi";
+import { useCart } from "@/context/CartContext";
+import { FiArrowRight, FiHeart, FiShoppingCart } from "react-icons/fi";
 import "./ComputerAccessories.css";
 
 export default function ComputerAccessories() {
+  const { addToCart, addToWishlist, isInWishlist } = useCart();
+
+  const products = [
+    { id: 1, title: "Amazon Basics High-Speed HDMI Cable", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80" },
+    { id: 2, title: "Portable Washing Machine, 11lbs capacity", img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=300&q=80" },
+    { id: 3, title: "TOZO T6 True Wireless Earbuds", img: "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=300&q=80" },
+    { id: 4, title: "Dell Optiplex 7000x7480 All-in-One Monitor", img: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=300&q=80" },
+    { id: 5, title: "Samsung Galaxy S21 5G", img: "https://images.unsplash.com/photo-1599839619722-39751411ea63?auto=format&fit=crop&w=300&q=80" },
+    { id: 6, title: "4K UHD LED Smart TV", img: "https://images.unsplash.com/photo-1599839619722-39751411ea63?auto=format&fit=crop&w=300&q=80" },
+    { id: 7, title: "Wired Over-Ear Gaming Headphones", img: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=300&q=80" },
+    { id: 8, title: "Polaroid 57-Inch Photo/Video Tripod", img: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=300&q=80" },
+  ];
+
   return (
     <section className="ca-section">
       <div className="ca-top-header">
@@ -21,156 +37,35 @@ export default function ComputerAccessories() {
 
       <div className="ca-main-content">
         <div className="ca-grid">
-          <div className="ca-card">
-            <span className="ca-badge blue-bg">BEST DEALS</span>
-            <div className="ca-img-box">
-              <Image
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80"
-                alt="Headphones"
-                fill
-                sizes="300px"
-              />
+          {products.map((item) => (
+            <div key={item.id} className="ca-card">
+              <div className="ca-img-box">
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  sizes="300px"
+                />
+                <div className="ca-card-actions">
+                  <button
+                    className={`ca-action-btn ${isInWishlist(item.id) ? "active" : ""}`}
+                    onClick={() => addToWishlist(item)}
+                    aria-label={isInWishlist(item.id) ? "Wishlistdan o'chirish" : "Wishlistga qo'shish"}
+                  >
+                    <FiHeart className={isInWishlist(item.id) ? "filled" : ""} />
+                  </button>
+                  <button
+                    className="ca-action-btn"
+                    onClick={() => addToCart(item)}
+                    aria-label="Savatga qo'shish"
+                  >
+                    <FiShoppingCart />
+                  </button>
+                </div>
+              </div>
+              <h3 className="ca-title">{item.title}</h3>
             </div>
-            <div className="ca-stars">
-              ★★★★★ <span>(994)</span>
-            </div>
-            <h3 className="ca-title">
-              Amazon Basics High-Speed HDMI Cable (18 Gbps, 4K/6...
-            </h3>
-            <span className="ca-price">₹360</span>
-          </div>
-
-          <div className="ca-card">
-            <div className="ca-img-box">
-              <Image
-                src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=300&q=80"
-                alt="Headphones"
-                fill
-                sizes="300px"
-              />
-            </div>
-            <div className="ca-stars">
-              ★★★★★ <span>(798)</span>
-            </div>
-            <h3 className="ca-title">
-              Portable Wshing Machine, 11lbs capacity Model 18NMF...
-            </h3>
-            <span className="ca-price">₹80</span>
-          </div>
-
-          <div className="ca-card">
-            <span className="ca-badge red-bg">HOT</span>
-            <div className="ca-img-box">
-              <Image
-                src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=300&q=80"
-                alt="Keyboard and Mouse"
-                fill
-                sizes="300px"
-              />
-            </div>
-            <div className="ca-stars">
-              ★★★★★ <span>(600)</span>
-            </div>
-            <h3 className="ca-title">
-              TOZO T6 True Wireless Earbuds Bluetooth Headphon...
-            </h3>
-            <span className="ca-price">₹70</span>
-          </div>
-
-          <div className="ca-card">
-            <div className="ca-img-box">
-              <Image
-                src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=300&q=80"
-                alt="Printer"
-                fill
-                sizes="300px"
-              />
-            </div>
-            <div className="ca-stars">
-              ★★★★★ <span>(492)</span>
-            </div>
-            <h3 className="ca-title">
-              Dell Optiplex 7000x7480 All-in-One Computer Monitor
-            </h3>
-            <span className="ca-price">₹250</span>
-          </div>
-
-          <div className="ca-card">
-            <div className="ca-img-box">
-              <Image
-                src="https://images.unsplash.com/photo-1599839619722-39751411ea63?auto=format&fit=crop&w=300&q=80"
-                alt="Webcam"
-                fill
-                sizes="300px"
-              />
-            </div>
-            <div className="ca-stars">
-              ★★★★☆ <span>(740)</span>
-            </div>
-            <h3 className="ca-title">
-              Samsung Electronics Samsung Galaxy S21 5G
-            </h3>
-            <span className="ca-price">₹2,300</span>
-          </div>
-
-          <div className="ca-card">
-            <span className="ca-badge green-bg">SALE</span>
-            <div className="ca-img-box">
-              <Image
-                src="https://images.unsplash.com/photo-1599839619722-39751411ea63?auto=format&fit=crop&w=300&q=80"
-                alt="Webcam 2"
-                fill
-                sizes="300px"
-              />
-            </div>
-            <div className="ca-stars">
-              ★★★★☆ <span>(556)</span>
-            </div>
-            <h3 className="ca-title">
-              4K UHD LED Smart TV with Chromecast Built-in
-            </h3>
-            <span className="ca-price">₹220</span>
-          </div>
-
-          <div className="ca-card">
-            <div className="ca-img-box">
-              <Image
-                src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=300&q=80"
-                alt="Printer 2"
-                fill
-                sizes="300px"
-              />
-            </div>
-            <div className="ca-stars">
-              ★★★★☆ <span>(536)</span>
-            </div>
-            <h3 className="ca-title">
-              Wired Over-Ear Gaming Headphones with USB
-            </h3>
-            <span className="ca-price">₹1,500</span>
-          </div>
-
-          <div className="ca-card">
-            <span className="ca-badge yellow-bg">25% OFF</span>
-            <div className="ca-img-box">
-              <Image
-                src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=300&q=80"
-                alt="Washing Machine"
-                fill
-                sizes="300px"
-              />
-            </div>
-            <div className="ca-stars">
-              ★★★★☆ <span>(423)</span>
-            </div>
-            <h3 className="ca-title">
-              Polaroid 57-Inch Photo/Video Tripod with Deluxe Tripod Ca...
-            </h3>
-            <div className="ca-price-wrap">
-              <del>₹1600</del>
-              <span className="ca-price">₹1,200</span>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="ca-sidebar">

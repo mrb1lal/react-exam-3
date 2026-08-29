@@ -4,3 +4,162 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+html {
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .shop-content-layout,
+  .featured-container,
+  .ca-main-content,
+  .deals-grid-container {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .shop-sidebar,
+  .ca-sidebar,
+  .featured-sale {
+    display: none !important;
+  }
+  
+  .shop-grid-area,
+  .featured-grid,
+  .ca-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+  
+  .deals-grid-container {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+  
+  .card-large {
+    grid-row: auto !important;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 13px;
+  }
+  
+  .shop-grid-area,
+  .featured-grid,
+  .ca-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .cart-drawer,
+  .wishlist-drawer {
+    max-width: 100% !important;
+  }
+  
+  .top-bar-container,
+  .middle-bar-container,
+  .bottom-bar-container {
+    padding: 0 12px !important;
+  }
+  
+  .search-box {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  
+  .nav-menu {
+    gap: 12px !important;
+  }
+  
+  .shop-top-bar,
+  .shop-top-left,
+  .deals-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  
+  .shop-top-right {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  
+  .filter-group {
+    flex: 1 !important;
+  }
+  
+  .position-group {
+    width: auto !important;
+  }
+  
+  .ca-top-header,
+  .ca-nav {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+  
+  .featured-top {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+  
+  .featured-tabs {
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+  
+  .cart-drawer,
+  .wishlist-drawer {
+    max-width: 100vw !important;
+  }
+  
+  .user-actions {
+    gap: 8px !important;
+  }
+  
+  .cart-btn,
+  .wishlist-btn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
